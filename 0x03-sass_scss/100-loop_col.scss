@@ -1,0 +1,10 @@
+/* parallel lists */
+$widths: 100% 50% (100px / 3px % 100%) 25%;
+
+// @debug $widths;
+
+@for $i from 1 through 4 {
+    .col-#{$i} {
+        width: nth($widths, $i);
+    }
+}
