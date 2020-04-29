@@ -330,7 +330,7 @@ a:active {
 .card-testimonial .card-quote cite {
   display: block;
   padding-top: 1rem;
-  columns: var(--color-primary);
+  color: var(--color-primary);
 }
 
 .card-services .card-title {
