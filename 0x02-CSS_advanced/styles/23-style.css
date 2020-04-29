@@ -320,7 +320,7 @@ ul.row {
 }
 
 .social-link > svg {
-  color: var(--text-color);
+  fill: var(--text-color);
 }
 
 [class^="col-"] {
@@ -340,10 +340,6 @@ ul.row {
   width: 960px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.footer-address {
-  color: var(--text-color);
 }
 
 .footer-copyright {
