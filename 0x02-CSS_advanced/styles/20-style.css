@@ -265,8 +265,8 @@ a:active {
   color: var(--nav-item-link-hover);
 }
 
-.row:after {
-  content: none;
+.row::after {
+  content: "";
   display: table;
   clear: both;
 }
