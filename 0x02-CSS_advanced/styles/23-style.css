@@ -342,6 +342,10 @@ ul.row {
   margin-right: auto;
 }
 
+.footer-address {
+  color: var(--text-color);
+}
+
 .footer-copyright {
   margin: 0;
   font-size: var(--font-size-small);
