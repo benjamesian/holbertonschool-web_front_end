@@ -251,9 +251,9 @@ a:active {
 }
 
 .button:hover {
-  columns: var(--button-hover-color);
+  color: var(--button-hover-color);
   text-decoration: var(--button-hover-text-decoration);
-  background-color: var(--button-hover-background);
+  background: var(--button-hover-background);
 }
 
 .visually-hidden {
