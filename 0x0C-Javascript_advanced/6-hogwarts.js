@@ -25,7 +25,7 @@ function studentHogwarts() {
   }
 }
 
-const harry = new studentHogwarts();
+const harry = studentHogwarts();
 harry.setName("Harry");
 
 harry.rewardStudent();
@@ -35,7 +35,7 @@ harry.rewardStudent();
 
 console.log(harry.getScore());
 
-const draco = new studentHogwarts();
+const draco = studentHogwarts();
 draco.setName("Draco");
 
 draco.rewardStudent();
