@@ -1,32 +1,27 @@
-/* only works in ES2019 otherwise private things aren't supported by JS */
-
-class studentHogwarts {
-  #privateScore;
-  #name;
+function studentHogwarts() {
+  let privateScore = 0;
+  let name = null;
   
-  constructor() {
-    this.#privateScore = 0;
-    this.#name = null;
+  function changeScoreBy(points) {
+    privateScore += points;
   }
 
-  #changeScoreBy(points) {
-    this.#privateScore += points;
-  }
-
-  setName(newName) {
-    this.#name = newName;
-  }
-
-  rewardStudent() {
-    this.#changeScoreBy(1);
-  }
-
-  penalizeStudent() {
-    this.#changeScoreBy(-1);
-  }
-
-  getScore() {
-    return this.#name + ": " + this.#privateScore;
+  return {
+    setName(newName) {
+      name = newName;
+    },
+  
+    rewardStudent() {
+      changeScoreBy(1);
+    },
+  
+    penalizeStudent() {
+      changeScoreBy(-1);
+    },
+  
+    getScore() {
+      return name + ": " + privateScore;
+    },
   }
 }
 
