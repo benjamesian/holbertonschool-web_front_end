@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <meta charset="utf-8" />
+  <title>Task 0</title>
+
+</head>
+
+<body>
+  <h1>Login to the website</h1>
+  <div>
+    <input id="firstname" type="text" placeholder="Firstname">
+    <input id="email" type="email" placeholder="Email">
+    <button onclick="setCookies()">Log me in</button>
+  </div>
+  <h1>Cookies</h1>
+  <button onclick="showCookies()">Show the cookies</button>
+  <script type="application/javascript">
+  function setCookies() {
+    const firstName = document.getElementById("firstname").value;
+    const email = document.getElementById("email").value;
+    document.cookie = `firstname=${firstName}`;
+    document.cookie = `email=${email}`;
+  }
+
+  function showCookies() {
+    const par = document.createElement("p");
+    par.innerHTML = `Cookies: ${document.cookie}`;
+    document.body.appendChild(par);
+  }
+  </script>
+</body>
+
+</html>
