@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+
+  <meta charset="utf-8" />
+  <title>Task 6</title>
+
+</head>
+
+<body>
+  <script type="application/javascript">
+    const availableItems = ["Shampoo", "Soap", "Sponge", "Water"];
+
+    function addItemToCart(item) {
+      const quantity = sessionStorage.getItem(item) || "0";
+      sessionStorage.setItem(item, parseInt(quantity, 10) + 1);
+    }
+
+    function removeItemFromCart(item) {
+      const oldQuantity = sessionStorage.getItem(item);
+      sessionStorage.setItem(item, parseInt(oldQuantity, 10) - 1);
+      displayCart();
+    }
+
+    function createStore() {
+      const list = document.createElement('ul');
+      availableItems.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.innerHTML = item;
+        listItem.addEventListener("click", (e) => {
+          e.preventDefault();
+          addItemToCart(item);
+        });
+        list.appendChild(listItem);
+      });
+      document.body.appendChild(list);
+    }
+
+    function displayCart() {
+      const storedItems = sessionStorage.length;
+      if (storedItems == 0) {
+        return;
+      }
+      const par = document.createElement('p');
+      par.innerHTML = `You previously had ${storedItems} items in your cart`;
+      document.body.appendChild(par);
+    }
+
+    function getCartFromStorage() {
+      const cartString = sessionStorage.get("cart") || "{}";
+      return JSON.parse(cartString);
+    }
+
+    function clearCart() {
+      sessionStorage.clear();
+      displayCart();
+    }
+
+    if (window.sessionStorage) {
+      createStore();
+      displayCart();
+    } else {
+      alert("Sorry, your browser does not support Web storage. Try again with a better one");
+    }
+  </script>
+</body>
+
+</html>
